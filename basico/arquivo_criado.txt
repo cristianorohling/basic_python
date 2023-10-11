@@ -1,0 +1,2 @@
+Este é o arquivo que eu criei com Python
+O segredo é aprender sempre!
