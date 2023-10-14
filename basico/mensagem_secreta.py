@@ -1,13 +1,23 @@
-lista_alfabetica = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-print(lista_alfabetica)
+def cria_chave_codigo():
+    alfabeto = list('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+    chave    = list('ZYXWVUTSRQPONMLKJIHGFEDCBA')
+    dicionario = dict(zip(alfabeto, chave))
+    print(dicionario)
+    return dicionario   
 
-# Crie uma cópia invertida da lista original
-lista_alfabetica_invertida = list(reversed(lista_alfabetica))
+def codificador(chave_codigo, codificar):
+    texto_codificado = ''
+    chave = chave_codigo
+    texto_normal = codificar
 
-print(lista_alfabetica_invertida)
+    for i in texto_normal:
+        if i in chave_codigo:
+            texto_codificado = texto_codificado + chave[i]
+        else:
+            texto_codificado = texto_codificado + i
+    return texto_codificado  
 
-mensagem = input('Digite a mensagem: ')
-
-mensagem = mensagem.lower()
-
-print(mensagem.upper())
+chave_codigo = cria_chave_codigo()
+codificar = input('Digite um texto a ser codificado: ').upper()
+texto_codificado = codificador(chave_codigo, codificar)
+print(texto_codificado)
