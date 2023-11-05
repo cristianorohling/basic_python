@@ -1,0 +1,17 @@
+#A série de Fibonacci é formada pela seqüência 0,1,1,2,3,5,8,13,21,34,55,... 
+#Faça um programa que gere a série até que o valor seja maior que 500.
+
+numero = -1
+
+def imprimeTermos(cont, numero):
+    print(f'{cont+1}º termo: {numero}')
+
+termo1 = 0
+termo2 = 1
+
+while termo1 <= 500:
+    termo3 = termo1 + termo2
+    termo1 = termo2
+    termo2 = termo3
+    numero += 1
+    imprimeTermos(numero,termo1)
