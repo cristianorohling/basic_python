@@ -56,7 +56,7 @@ def apuracaoVotos(candidato1, candidato2, candidato3, candidato1Votos, candidato
         anunciaVencedor(candidato2,candidato2Votos)
     elif (candidato3Votos > candidato1Votos) and (candidato3Votos > candidato2Votos):
         anunciaVencedor(candidato3,candidato3Votos)
-    elif (candidato1Votos == candidato2Votos) or (candidato1Votos == candidato3Votos)  or (candidato3Votos == candidato2Votos):
+    else:
         print('Houve Empate!')
 
 
