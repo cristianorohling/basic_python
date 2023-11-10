@@ -21,23 +21,28 @@ os.system('cls' if os.name == 'nt' else 'clear')
 
 contador = 1
 valorTotal = 0
-recebePreco = 999999999
+recebePreco = 9999999999
 
 while recebePreco != 0:
-    recebePreco = float(input(f'Produto {contador}: R$ '))
-    valorTotal = valorTotal + recebePreco    
-    contador += 1        
+    try:
+        recebePreco = float(input(f'Produto {contador}: R$ '))
+        valorTotal = valorTotal + recebePreco    
+        contador += 1        
+    except ValueError:
+        print('Digite um valor numérico!')
 print(f'Total: R$ {valorTotal}')        
 
-while True:        
-    valorDinheiro = float(input('Digite o valor em dinheiro fornecido pelo cliente: '))
-    if valorDinheiro < valorTotal:
-        print(f'Você me deu R$ {valorDinheiro}, então faltam {valorTotal-valorDinheiro} para o valor Total, que é {valorTotal}')
-        break
-    else:
-        troco = valorDinheiro - valorTotal
-        print(f'Troco: {troco}')
-
+while True:
+    try:        
+        valorDinheiro = float(input('Digite o valor em dinheiro fornecido pelo cliente: '))
+        if valorDinheiro < valorTotal:
+            print(f'Você me deu R$ {valorDinheiro}, então faltam {valorTotal-valorDinheiro} para o valor Total, que é {valorTotal}')        
+        else:
+            troco = valorDinheiro - valorTotal
+            print(f'Troco: {troco}')
+            break
+    except ValueError:
+        print('Digite um valor numérico!')
 
 
 
