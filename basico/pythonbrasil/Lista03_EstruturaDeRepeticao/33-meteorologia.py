@@ -3,7 +3,6 @@
 #e informe ao final a menor e a maior temperaturas informadas,
 #bem como a média das temperaturas.
 
-
 def leTemperatura():
     temp = input('Digite a temperatura: ')
     return temp
@@ -11,7 +10,7 @@ def leTemperatura():
 
 i = 0
 tempAcumulada = 0
-#tempNumero = 0
+tempNumero = 0
 tempAnterior = 0
 
 
@@ -26,12 +25,12 @@ while True:
         tempNumero = float(temp)
         tempAcumulada += tempNumero     
         if i == 1:
-            tempMax = max(tempAnterior,tempNumero)    
-            tempMin = min(tempAnterior,tempNumero)    
+            tempMax = tempNumero
+            tempMin = tempNumero
         else:
             tempMax = max(tempMax,tempNumero)
             tempMin = min(tempMin,tempNumero)
-        print(f'i: {i} ant: {tempAnterior} num: {tempNumero}, max: {tempMax}, min: {tempMin} )')
+        #print(f'i: {i} ant: {tempAnterior} num: {tempNumero}, max: {tempMax}, min: {tempMin} )')
 
 
 print(f'Foram digitadas {i-1} temperaturas.')
